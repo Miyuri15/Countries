@@ -51,7 +51,7 @@ const Home = () => {
   };
 
   return (
-    <Container maxWidth="xl" sx={{ py: 4 }}>
+    <Container maxWidth="4xl" sx={{ py: 4 }}>
       <Box sx={{ 
         display: 'flex', 
         flexDirection: { xs: 'column', sm: 'row' }, 
@@ -73,18 +73,19 @@ const Home = () => {
           <CircularProgress size={60} />
         </Box>
       ) : filteredCountries.length === 0 ? (
-        <Box sx={{ textAlign: 'center', py: 10 }}>
-          <Typography variant="h6" color="text.secondary">
-            No countries found matching your criteria
-          </Typography>
-        </Box>
+        <Typography variant="h6" align="center" sx={{ py: 10 }}>
+          No countries found.
+        </Typography>
       ) : (
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {filteredCountries.map((country) => (
-            <Grid item key={country.cca3} xs={12} sm={6} md={4} lg={3}>
-              <Box sx={{ height: '100%' }}>
-                <CountryCard country={country} />
-              </Box>
+            <Grid 
+              item 
+              key={country.cca3} 
+              xs={12} sm={6} md={4} lg={3} xl={2.4} // 5 cards/row on xl screens
+              sx={{ display: 'flex' }} // Ensures equal height
+            >
+              <CountryCard country={country} />
             </Grid>
           ))}
         </Grid>
@@ -92,5 +93,4 @@ const Home = () => {
     </Container>
   );
 };
-
 export default Home;

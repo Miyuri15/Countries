@@ -1,7 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import CountryPage from './pages/CountryPage';
-import Header from './components/Header';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CountryPage from "./pages/CountryPage";
+import Header from "./components/Header";
 
 function App() {
   return (

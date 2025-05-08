@@ -132,6 +132,11 @@ body {
   color: var(--text-light);
 }
 
+/* Smooth grid transitions */
+.MuiGrid-root { 
+  transition: all 0.3s ease; 
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .details-container {
