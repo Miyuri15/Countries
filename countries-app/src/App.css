@@ -1,0 +1,149 @@
+/* App.css */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --background-light: #f8f9fa;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card Styles */
+.country-card {
+  transition: var(--transition);
+  border-radius: var(--border-radius) !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.country-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.country-card .MuiCardMedia-root {
+  transition: var(--transition);
+}
+
+.country-card:hover .MuiCardMedia-root {
+  transform: scale(1.05);
+}
+
+/* Button Styles */
+.MuiButton-contained {
+  background-color: var(--primary-color) !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: var(--secondary-color) !important;
+}
+
+.MuiButton-outlined {
+  border-radius: var(--border-radius) !important;
+  text-transform: none !important;
+}
+
+/* Chip Styles */
+.MuiChip-root {
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition) !important;
+}
+
+.MuiChip-root:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--white) !important;
+}
+
+/* Responsive Grid */
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Details Page */
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.details-flag {
+  flex: 1;
+  min-width: 300px;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.details-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Search and Filter */
+.search-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+  }
+  
+  .search-filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-filter-container > * {
+    width: 100% !important;
+  }
+}
