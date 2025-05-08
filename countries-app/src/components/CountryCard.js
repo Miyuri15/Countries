@@ -1,10 +1,10 @@
+// CountryCard.js
 import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const CountryCard = ({ country }) => {
   return (
     <Card sx={{ 
-      maxWidth: 345, 
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -21,14 +21,15 @@ const CountryCard = ({ country }) => {
         alt={`Flag of ${country.name.common}`}
         sx={{
           objectFit: 'cover',
+          width: '100%',
           transition: 'transform 0.3s ease'
         }}
       />
-      <CardContent sx={{ flexGrow: 1 }}>
+      <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         <Typography gutterBottom variant="h6" component="div" sx={{ fontWeight: 600 }}>
           {country.name.common}
         </Typography>
-        <Box sx={{ mb: 2 }}>
+        <Box sx={{ mb: 2, flexGrow: 1 }}>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
             <Box component="span" sx={{ fontWeight: 600 }}>Population:</Box> {country.population.toLocaleString()}
           </Typography>

@@ -1,3 +1,4 @@
+// Home.js
 import { useState, useEffect } from 'react';
 import { Grid, Container, Box, CircularProgress, Typography } from '@mui/material';
 import { getAllCountries, getCountriesByRegion } from '../services/api';
@@ -81,7 +82,9 @@ const Home = () => {
         <Grid container spacing={4}>
           {filteredCountries.map((country) => (
             <Grid item key={country.cca3} xs={12} sm={6} md={4} lg={3}>
-              <CountryCard country={country} />
+              <Box sx={{ height: '100%' }}>
+                <CountryCard country={country} />
+              </Box>
             </Grid>
           ))}
         </Grid>
